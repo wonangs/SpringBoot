@@ -39,6 +39,5 @@ public class ArticleController {
 //        System.out.println(saved.toString());
 
         return "";
-        이 파일만 불러오고 싶은데 어떻게해야합니까
     }
 }

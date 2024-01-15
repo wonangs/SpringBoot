@@ -1,0 +1,26 @@
+{{>layouts/header}}
+
+<table class = "table">
+	<thead>
+	<tr>
+		<th scope = "col">Id</th>
+		<th scope = "col">Title</th>
+		<th scope = "col">Content</th>
+	</tr>
+	</thead>
+	<tbody>
+
+<!--	내부가 반복문처럼 반복됨-->
+	{{#articleList}}
+		<tr>
+			<th>{{id}}</th>
+			<td>{{title}}</td>
+			<td>{{content}}</td>
+		</tr>
+	{{/articleList}}
+<!---->
+
+	</tbody>
+</table>
+
+{{>layouts/footer}}

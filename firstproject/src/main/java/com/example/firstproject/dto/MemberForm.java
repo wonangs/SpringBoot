@@ -1,6 +1,5 @@
 package com.example.firstproject.dto;
 
-import com.example.firstproject.entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 
@@ -11,7 +10,7 @@ public class MemberForm {
     private String email;
     private String password;
 
-    public Member toEntity() {
-        return new Member(null, email, password);
+    public com.example.firstproject.entity.Member toEntity() {
+        return new com.example.firstproject.entity.Member(null, email, password);
     }
 }

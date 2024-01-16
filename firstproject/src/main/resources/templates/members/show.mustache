@@ -1,0 +1,27 @@
+{{>layouts/header}}
+
+<table class = "table">
+	<thead>
+	<tr>
+		<th scope = "col">Id</th>
+		<th scope = "col">Email</th>
+		<th scope = "col">Password</th>
+	</tr>
+	</thead>
+	<tbody>
+
+	{{#members}}
+		<tr>
+			<th>{{id}}</th>
+			<td>{{email}}</td>
+			<td>{{password}}</td>
+		</tr>
+	{{/members}}
+
+
+	</tbody>
+</table>
+
+<a href = "/members">Go to Member List</a>
+
+{{>layouts/footer}}

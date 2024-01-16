@@ -41,7 +41,7 @@ public class ArticleController {
         model.addAttribute("article", articleEntity);
 
         // 3. 뷰 페이지 반환하기
-        return "articles/show";
+        return "articles/show"; // 목록으로 돌아가기 링크를 넣을 뷰 파일 확인
     }
 
     @GetMapping("/articles")
@@ -79,6 +79,6 @@ public class ArticleController {
         log.info(saved.toString());
 //        System.out.println(saved.toString());
 
-        return "";
+        return "redirect:/articles/" + saved.getId();
     }
 }

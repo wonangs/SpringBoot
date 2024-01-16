@@ -10,17 +10,19 @@
 	</thead>
 	<tbody>
 
-<!--	내부가 반복문처럼 반복됨-->
+	<!--	내부가 반복문처럼 반복됨-->
 	{{#articleList}}
 		<tr>
 			<th>{{id}}</th>
-			<td>{{title}}</td>
+			<td><a href = "/articles/{{id}}">{{title}}</a></td>
 			<td>{{content}}</td>
 		</tr>
 	{{/articleList}}
-<!---->
+	<!---->
 
 	</tbody>
 </table>
+
+<a href = "/articles/new">New Articles</a>
 
 {{>layouts/footer}}

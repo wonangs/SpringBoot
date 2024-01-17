@@ -18,11 +18,6 @@ public class MemberController {
     @Autowired
     MemberRepository memberRepository;
 
-
-    @GetMapping("/members/new")
-    public String newMemberForm() {
-        return "members/new";
-    }
     @GetMapping("/signup")
     public String signUpPage() {
         return "members/new";
@@ -47,6 +42,37 @@ public class MemberController {
         model.addAttribute("members", members);
 
         return"members/index";
+    }
+
+    @GetMapping("/members/{id}/edit")
+    public String edit(@PathVariable Long id, Model model) {
+
+        // 수정할 데이터 가져오기
+        Member memberEntity = memberRepository.findById(id).orElse(null);
+
+        // 모델에 데이터 등록하기
+        model.addAttribute("member", memberEntity);
+
+        // 뷰 페이지 설정
+        return "members/edit";
+    }
+
+    @PostMapping("/members/update")
+    public String update(MemberForm form) {
+        log.info(form.toString());
+
+        // 1. DTO를 엔티티로 변환
+        Member memberEntity = form.toEntity();
+        log.info(memberEntity.toString());
+
+        // 2. 엔티티를 DB에 저장
+        Member target = memberRepository.findById(memberEntity.getId()).orElse(null);
+
+        if (target != null) { // 기존 데이터가 존재한다면
+            memberRepository.save(memberEntity); // 엔티티를 DB에 저장(갱신)
+        }
+        // 3. 수정 결과 페이지로 리다이렉트
+        return "redirect:/members/" + memberEntity.getId();
     }
 
 

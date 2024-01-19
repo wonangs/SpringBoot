@@ -14,7 +14,7 @@ import lombok.ToString;
 public class Article {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // (strategy = GenerationType.IDENTITY) 기본값은 auto, IDENTITY로 ID 에러 해결
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // (strategy = GenerationType.IDENTITY) 기본값은 auto, IDENTITY로 ID 에러 해결 auto increment로 설정
     private Long id;
 
     @Column

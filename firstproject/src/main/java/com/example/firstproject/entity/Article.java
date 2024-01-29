@@ -16,10 +16,8 @@ public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // (strategy = GenerationType.IDENTITY) 기본값은 auto, IDENTITY로 ID 에러 해결 auto increment로 설정
     private Long id;
-
     @Column
     private String title;
-
     @Column
     private String content;
 
@@ -29,6 +27,5 @@ public class Article {
         if (article.content != null)
             this.content = article.content;
     }
-
     // Article 생성자 추가
 }

@@ -18,6 +18,7 @@
     <named-native-query
             name="Comment.findByNickname"
             result-class="com.example.firstproject.entity.Comment">
+        <!--쿼리문 작성-->
         <query>
             <![CDATA[
                 SELECT * FROM comment WHERE nickname = :nickname

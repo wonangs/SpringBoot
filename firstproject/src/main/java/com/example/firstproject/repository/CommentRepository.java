@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
+// 댓글 리파지터리(DB에게 CRUD 요청을 보내는 JPA 인터페이스)
 public interface CommentRepository extends JpaRepository<Comment, Long> {
     // 특정 게시글의 모든 댓글 조회
     @Query(value = "SELECT * FROM comment WHERE article_id = :articleId",
